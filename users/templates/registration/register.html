@@ -1,0 +1,40 @@
+{% extends "PollApp/base.html" %}
+
+{% block body %}
+
+    <h2>Register</h2>
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+        <!-- Kullanıcı adı alanı -->
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" class="form-control" id="username" required>
+            <small id="usernameHelp" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and
+                @/./+/-/_ only.</small>
+        </div>
+
+        <!-- Şifre alanı -->
+        <div class="form-group">
+            <label for="password1">Password:</label>
+            <input type="password" name="password1" class="form-control" id="password1" required>
+            <small id="passwordHelp" class="form-text text-muted">Your password can’t be too similar to your other
+                personal information.
+                Your password must contain at least 8 characters.
+                Your password can’t be a commonly used password.
+                Your password can’t be entirely numeric.</small>
+        </div>
+
+        <!-- Şifre doğrulama alanı -->
+        <div class="form-group">
+            <label for="password2">Password confirmation:</label>
+            <input type="password" name="password2" class="form-control" id="password2" required>
+            <small id="password2Help" class="form-text text-muted">Enter the same password as before, for
+                verification.</small>
+        </div>
+
+        <button name="submit" class="btn btn-primary">Register</button>
+        <!-- Button'un adı submit, değeri 'Register' -->
+        <input type="hidden" name="next" value="{% url 'PollApp:home' %}">
+    </form>
+
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends 'PollApp/base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="home-content">
+                <style>
+                    body {
+                    background-image: url('static/30739.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                    }
+                </style>
+                <hr style ="height: 10px;
+                            background-color: black;
+                            border-radius: 7px 7px 7px 7px;
+                            ">
+                <br>
+                <br>
+                <br>
+                <h1 style="font-family:verdana; font-size:500%; text-shadow: 1px 2px 2px rgba(128,128,128,1);" class="text-center">Your Vote, Our Data!</h1>
+                <br>
+                <br>
+                <br>
+                <h3 style="font-family:verdana;" class="text-center">Login to Start Voting!</h3>
+                <br>
+                <br>
+                <br>
+                <div class="text-center">
+                    <a class="btn btn-outline-success" href="{% url 'PollApp:home' %}" role="button">Get Started !</a>
+                </div>
+                <hr style ="height: 10px;
+                            background-color: black;
+                            border-radius: 7px 7px 7px 7px;
+                            ">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

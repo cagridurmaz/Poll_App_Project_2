@@ -23,10 +23,6 @@
   {% endfor %}
   <hr class="my-4">
   <button class="btn btn-outline-success">Vote</button>
-  {% if success_message %}
-  <a href="{% url 'PollApp:poll_result' poll.id %}" class="btn btn-outline-success">Result</a>
-  {% endif %}
-
 </form>
 {% endblock %}
 

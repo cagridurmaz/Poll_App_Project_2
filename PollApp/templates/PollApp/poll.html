@@ -2,31 +2,31 @@
 
 {% block body %}
 
-{% if success_message %}
-<div class="alert alert-success"> {{ success_message }} </div>
-{% endif %}
+    {% if success_message %}
+        <div class="alert alert-success"> {{ success_message }} </div>
+    {% endif %}
 
-<h2> {{ poll.name }} </h2>
-<i>
-  <h6> {{ poll.description }} </h6>
-</i>
-<hr class="my-4">
-<form method="post">
-  {% csrf_token %}
-  {% for choice in poll.choices.all %}
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="choice_id" id="{{ choice.id }}" value="{{ choice.id }}">
-    <label class="form-check-label" for="{{ choice.id }}">
-      {{ choice.name }}
-    </label>
-  </div>
-  {% endfor %}
-  <hr class="my-4">
-  <button class="btn btn-outline-success">Vote</button>
-  {% if success_message %}
-  <a href="{% url 'PollApp:poll_result' poll.id %}" class="btn btn-outline-success">Result</a>
-  {% endif %}
+    <h2> {{ poll.name }} </h2>
+    <i>
+        <h6> {{ poll.description }} </h6>
+    </i>
+    <hr class="my-4">
+    <form method="post">
+        {% csrf_token %}
+        {% for choice in poll.choices.all %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="choice_id" id="{{ choice.id }}"
+                       value="{{ choice.id }}">
+                <label class="form-check-label" for="{{ choice.id }}">
+                    {{ choice.name }}
+                </label>
+            </div>
+        {% endfor %}
+        <hr class="my-4">
+        <button class="btn btn-outline-success">Vote</button>
+        {% if success_message %}
+            <a href="{% url 'PollApp:poll_result' poll.id %}" class="btn btn-outline-success">Result</a>
+        {% endif %}
 
-</form>
+    </form>
 {% endblock %}
-

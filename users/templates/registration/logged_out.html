@@ -1,0 +1,12 @@
+{% extends "PollApp/base.html" %}
+{% block body %}
+<div class="alert alert-success" role="alert">   <!--Başarı mesajı yazmak için Bootstrap bileşeni  -->
+  <h4 class="alert-heading">
+    You have been logged out. Thank you for visiting!
+  </h4>
+  <p><i class="bi bi-hand-thumbs-up-fill"></i>Hope to see you again soon!</p>
+  <hr>
+  <p>Go back to <a href="{% url 'PollApp:index' %}">home page</a>.</p>
+</div>
+
+{% endblock body %}

@@ -5,6 +5,9 @@
     <h2>Register</h2>
     <form method="post" action="{% url 'users:register' %}">
         {% csrf_token %}
+
+
+
         <!-- Kullanıcı adı alanı -->
         <div class="form-group">
             <label for="username">Username:</label>

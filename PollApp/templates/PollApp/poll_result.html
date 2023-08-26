@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-body">
                 {% for choice in choices_with_votes %}
-                    <p>{{ choice.name }} : {{ choice.total_votes }}</p>
+                    <li>{{ choice.name }} - {{ choice.total_votes }} oy (%{{ choice.vote_percentage|floatformat:"2" }})</li>
                 {% endfor %}
             </div>
         </div>
@@ -23,5 +23,7 @@
 
         <a href="{% url 'PollApp:home' %}" class="btn btn-primary mt-4">PollPage</a>
     </div>
+
+
 
 {% endblock %}
